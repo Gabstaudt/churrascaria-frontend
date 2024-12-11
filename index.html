@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Endpoints</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Teste de Endpoints</h1>
+  </header>
+  
+  <main>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form onsubmit="fazerLogin(event)">
+          <input type="email" id="email" placeholder="E-mail" required />
+          <input type="password" id="senha" placeholder="Senha" required />
+          <button type="submit">Entrar</button>
+        </form>
+        <p id="loginStatus"></p>
+      </section>
+
+
+  <section id="setores">
+    <h2>Setores</h2>
+    <button onclick="listarSetores()">Listar Setores</button>
+    <form onsubmit="criarSetor(event)">
+        <input type="text" id="nomeSetor" placeholder="Nome do Setor" required />
+        <button type="submit">Criar Setor</button>
+    </form>
+    <div id="resultadoSetores"></div>
+</section>
+
+
+    <section id="categorias">
+      <h2>Categorias</h2>
+      <button onclick="listarCategorias()">Listar Categorias</button>
+      <form onsubmit="criarCategoria(event)">
+        <input type="text" id="nomeCategoria" placeholder="Nome da Categoria" required />
+        <textarea id="descricaoCategoria" placeholder="Descrição"></textarea>
+        <button type="submit">Criar Categoria</button>
+      </form>
+      <div id="resultadoCategorias"></div>
+    </section>
+
+    <section id="produtos">
+        <h2>Criar Produto</h2>
+        <form onsubmit="criarProduto(event)">
+            <input type="text" id="nomeProduto" placeholder="Nome do Produto" required />
+            <textarea id="descricaoProduto" placeholder="Descrição do Produto"></textarea>
+            <input type="number" id="precoProduto" placeholder="Preço Unitário" step="0.01" required />
+            <input type="number" id="estoqueProduto" placeholder="Estoque Inicial" required />
+            <input type="number" id="categoriaProduto" placeholder="ID da Categoria" required />
+            <input type="number" id="setorProduto" placeholder="ID do Setor (opcional)" />
+            <button type="submit">Criar Produto</button>
+        </form>
+        <button onclick="listarProdutos()">Listar Produtos</button>
+        <div id="resultadoProdutos"></div>
+    </section>
+    
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
